@@ -1,0 +1,15 @@
+#menu a {
+    color: #23353f;
+}
+
+.active-menu {
+    color: #a5374b !important;
+}
+
+#menu {
+    text-align: center;
+    background: #efe5d900;
+    font-size: 40px !important;
+    box-shadow: none;
+}
+

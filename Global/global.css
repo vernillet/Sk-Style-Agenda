@@ -1,0 +1,18 @@
+body {
+    font-family: HelveticaC;
+    background-color: #efe5d9;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.modal-overlay {
+    background: #efe5d9 !important;
+}
+
+/*-- FONTS --*/
+@font-face {
+    font-family: HelveticaC;
+    src: url("./Helvetica-LT-Std-Condensed_22476.ttf") format('opentype');
+  }
+/*-- -- --*/
