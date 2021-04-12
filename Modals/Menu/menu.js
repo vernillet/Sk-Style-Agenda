@@ -7,7 +7,7 @@ function initModalMenu() {
         $('#btn-Menu').text('close');
         $('#btn-Menu').parent().attr("href", "#!");
     };//Animation du bouton Menu ouverture
-    var menuModal = M.Modal.init($('#menu'), {
+    M.Modal.init($('#menu'), {
         opacity: 0.9,
         onCloseEnd: onModalClose,
         onOpenStart: onModalOpen
@@ -20,6 +20,8 @@ function initModalMenu() {
         $('#cp-lien').addClass('active-menu'); //Couleur du lien actif (classe CSS)
     }
 }
+
+
 
 initModalMenu();
 //Vu que le Modal sera appelé pendant le $(document).ready()

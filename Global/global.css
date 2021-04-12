@@ -10,6 +10,10 @@ body {
     background: #efe5d9 !important;
 }
 
+.head-section {
+    height: 100vh;
+}
+
 /*-- FONTS --*/
 @font-face {
     font-family: HelveticaC;

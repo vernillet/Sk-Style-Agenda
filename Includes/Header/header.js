@@ -6,3 +6,5 @@ $('#btn-Menu').click(function(){
     }
 
 });
+
+//Add the login script here
