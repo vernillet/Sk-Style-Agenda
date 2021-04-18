@@ -1,0 +1,34 @@
+<div id="register" class="modal">
+    <div class="modal-content">
+        <form id="registerForm" onsubmit="return false;">
+
+            <label for="nom">Nom</label>
+            <input type="text" name="nom" requiered>
+
+            <label for="prenom">Prenom</label>
+            <input type="text" name="prenom" requiered>
+            
+            <label for="email">E-mail</label>
+            <input type="text" name="email" requiered>
+
+            <label for="telephone">Numéro de téléphone</label>
+            <input type="text" name="telephone" requiered>
+
+            <label for="password">Mot de passe</label>
+            <input type="password" name="password" requiered>
+            
+            <label for="passwordconfirm">Confirmer le mot de passe</label>
+            <input type="password" name="passwordconfirm" requiered>
+
+            <label>
+                <input type="checkbox" name="conditions" value="1" requiered>
+                <span>J'accepte les <a href="https://sk-style.fr/mentions-legales-politique-confidentialite/">conditions d'utilisations et mentions legales.../TEXTE EXEMPLE/</a></span>
+            </label>
+            
+            <p id="registerError"></p>
+            
+            <input type="submit" class="btn" value="S'inscrire">
+
+        </form>
+    </div>
+</div>
