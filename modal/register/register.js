@@ -17,7 +17,6 @@ $('#registerForm').submit(function () {
     };
     
     json = JSON.stringify(json);
-    console.log(json);
     var xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function() 
@@ -26,6 +25,7 @@ $('#registerForm').submit(function () {
         { //NE PAS OUBLIER LA VERIFICATION 
             if (this.status == 200)
             {
+                console.log(this.responseText);
                 var response = JSON.parse(this.responseText);
                 if(response.error != 0)
                 {
