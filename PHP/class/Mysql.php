@@ -1,5 +1,4 @@
 <?php 
-    include 'Utilisateur.php';
     class Mysql{
 
         static private $connection = "mysql:dbname=agenda;host=localhost";
@@ -15,7 +14,7 @@
             }
         }
         
-        public static function getUser($email) {
+        public static function getLogin($email) {
 
             $db = self::connect();
             $req = $db->prepare("SELECT email, mot_de_passe, status FROM utilisateurs WHERE email = '".$email."'");
@@ -27,6 +26,18 @@
 
         }
         
+        public static function getUser($email) {
+            $db = self::connect();
+            $req = $db->prepare("SELECT nom, prenom, email, telephone, status FROM utilisateurs WHERE email = '".$email."'");
+
+            $req->execute();
+            
+            $response = $req->fetch();
+
+            $user = new Utilisateur($response['nom'], $response['prenom'], $response['email'], $response['telephone'], $response['status']);
+            return $user;
+        }
+
         public static function setUser($User, $mot_de_passe) {
 
             $db = self::connect();

@@ -1,10 +1,12 @@
-function initModalRegister() {
+function initModalRegister() 
+{
     M.Modal.init($('#register'));//Initialisation du Modal
 }
 
 $('#registerForm').submit(function () {
 
-    var json = {
+    var json = 
+    {
         nom:             $('#registerForm input[name="nom"]').val(),
         prenom:          $('#registerForm input[name="prenom"]').val(),
         email:           $('#registerForm input[name="email"]').val(),
@@ -18,28 +20,27 @@ $('#registerForm').submit(function () {
     console.log(json);
     var xhttp = new XMLHttpRequest();
 
-    xhttp.onreadystatechange = function() {
-        
-        if (this.readyState == 4) { //NE PAS OUBLIER LA VERIFICATION 
-            if (this.status == 200) {
-
+    xhttp.onreadystatechange = function() 
+    {
+        if (this.readyState == 4)
+        { //NE PAS OUBLIER LA VERIFICATION 
+            if (this.status == 200)
+            {
                 var response = JSON.parse(this.responseText);
-
-                if(response.Error != 0) {
-                    $('#registerError').html(response.ErrorMessage);
+                if(response.error != 0)
+                {
+                    $('#registerError').html(response.errorMessage);
                 }
-
-                if(response.Error == 0) {
-                    //SessionUtilisateur(); //Récupére la session en cours et change l'affichage
+                if(response.error == 0)
+                {
+                    //SetSessionUtilisateur(); //Récupére la session en cours et change l'affichage
                     M.Modal.getInstance($('#register')).close();
                 }
-
             }
         }
-
     }
 
-    xhttp.open("POST","./PHP/Scripts/checkRegister.php");
+    xhttp.open("POST","./php/script/register.php");
     xhttp.setRequestHeader("Content-type", "application/json")
     xhttp.send(json);
 

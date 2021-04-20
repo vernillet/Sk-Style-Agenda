@@ -20,7 +20,7 @@ $('#loginForm').submit(function () {
             if (this.status == 200) {
 
                 if(response.valide) {
-                    //SessionUtilisateur(); //Récupére la session en cours et change l'affichage
+                    SetSessionUtilisateur(); //Récupére la session en cours et change l'affichage
                     M.Modal.getInstance($('#login')).close();
                 }
                 else {
