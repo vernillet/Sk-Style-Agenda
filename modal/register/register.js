@@ -12,7 +12,7 @@ $('#registerForm').submit(function () {
         email:           $('#registerForm input[name="email"]').val(),
         telephone:       $('#registerForm input[name="telephone"]').val(),
         password:        $('#registerForm input[name="password"]').val(),
-        passwordconfirm: $('#registerForm input[name="passwordconfirm"]').val(),
+        passwordConfirm: $('#registerForm input[name="passwordConfirm"]').val(),
         conditions:      $('#registerForm input[name="conditions"]').val()
     };
     

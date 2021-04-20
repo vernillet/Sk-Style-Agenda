@@ -19,8 +19,10 @@ $('#loginForm').submit(function () {
         if (this.readyState == 4) { //NE PAS OUBLIER LA VERIFICATION 
             if (this.status == 200) {
 
+                var response = JSON.parse(this.response);
+
                 if(response.valide) {
-                    SetSessionUtilisateur(); //Récupére la session en cours et change l'affichage
+                    //SetSessionUtilisateur(); //Récupére la session en cours et change l'affichage
                     M.Modal.getInstance($('#login')).close();
                 }
                 else {
@@ -32,7 +34,7 @@ $('#loginForm').submit(function () {
 
     }
 
-    xhttp.open("POST","./PHP/Scripts/checkLogin.php");
+    xhttp.open("POST","./php/script/login.php");
     xhttp.setRequestHeader("Content-type", "application/json")
     xhttp.send(json);
 

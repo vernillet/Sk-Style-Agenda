@@ -13,7 +13,7 @@
             $user = Mysql::getUser($_SESSION['userData']->email);
             $_SESSION['user'] = $user;
 
-            $response->user = $user;
+            $response->error = 0;
 
             $jsonResponse = json_encode($response);
             echo $jsonResponse;
