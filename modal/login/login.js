@@ -22,7 +22,7 @@ $('#loginForm').submit(function () {
                 var response = JSON.parse(this.response);
 
                 if(response.valide) {
-                    //SetSessionUtilisateur(); //Récupére la session en cours et change l'affichage
+                    SetSessionUtilisateur(); //Récupére la session en cours et change l'affichage
                     M.Modal.getInstance($('#login')).close();
                 }
                 else {

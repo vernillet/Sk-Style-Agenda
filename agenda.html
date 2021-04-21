@@ -4,7 +4,7 @@
         <title>Sk-Style Agenda</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="./Global/global.css">
+        <link rel="stylesheet" href="./global/global.css">
         <link rel="stylesheet" href="agenda.css">
     </head>
     <body>
@@ -21,8 +21,39 @@
             </div>
         </div>
 
-        <a href="#login" class="modal-trigger">Connexion</a>
-        <a href="#register" class="modal-trigger">S'enregistrer</a>
+        <a id="btn-login" href="#login" class="btn modal-trigger">Connexion</a>
+        <a id="btn-register" href="#register" class="btn modal-trigger">S'enregistrer</a>
+        <a id="btn-deconect" href="#!" class="btn hide">Se deconnecter</a>
+
+        <div class="white section">
+            <div class="container btn-semaine">
+                <a href="#!" id="btn-previous-week" class="btn left orange lighten-4 black-text" disabled="disabled">Semaine precedente</a>
+                <a href="#!" id="btn-next-week" class="btn right orange lighten-4 black-text">Semaine suivante</a>
+            </div>
+            <div class="agenda">
+                <div class="jours">
+                    <div>Lundi</br><span></span></div>
+                    <div>Mardi</br><span></span></div>
+                    <div>Mercredi</br><span></span></div>
+                    <div>Jeudi</br><span></span></div>
+                    <div>Vendredi</br><span></span></div>
+                </div>
+                <div class="heures">
+                    <div><span>9h</span></div>
+                    <div><span>10h</span></div>
+                    <div><span>11h</span></div>
+                    <div><span>12h</span></div>
+                    <div><span>13h</span></div>
+                    <div><span>14h</span></div>
+                    <div><span>15h</span></div>
+                    <div><span>16h</span></div>
+                    <div><span>17h</span></div>
+                    <div><span>18h</span></div>
+                    <div><span>19h</span></div>
+                </div>
+                <div class="evenement"></div>
+                </div>
+            </div>
 
         <div include-html="./include/footer/footer"></div>
         <!--Body-->
@@ -31,6 +62,7 @@
         <script src="./global/jquery-3.6.0.min.js"></script>
         <script src="./global/materialize.min.js"></script> 
         <script src="./global/includeHTML.js"></script>
+        <script src="./global/SetSessionUtilisateur.js"></script>
         <script src="agenda.js"></script>
         <!--Scripts-->
     </body>

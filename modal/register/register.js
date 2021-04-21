@@ -7,13 +7,13 @@ $('#registerForm').submit(function () {
 
     var json = 
     {
-        nom:             $('#registerForm input[name="nom"]').val(),
-        prenom:          $('#registerForm input[name="prenom"]').val(),
-        email:           $('#registerForm input[name="email"]').val(),
-        telephone:       $('#registerForm input[name="telephone"]').val(),
-        password:        $('#registerForm input[name="password"]').val(),
+        nom:             $('#registerForm input[name="nom"]'            ).val(),
+        prenom:          $('#registerForm input[name="prenom"]'         ).val(),
+        email:           $('#registerForm input[name="email"]'          ).val(),
+        telephone:       $('#registerForm input[name="telephone"]'      ).val(),
+        password:        $('#registerForm input[name="password"]'       ).val(),
         passwordConfirm: $('#registerForm input[name="passwordConfirm"]').val(),
-        conditions:      $('#registerForm input[name="conditions"]').val()
+        conditions:      $('#registerForm input[name="conditions"]'     ).val()
     };
     
     json = JSON.stringify(json);
@@ -27,13 +27,13 @@ $('#registerForm').submit(function () {
             {
                 console.log(this.responseText);
                 var response = JSON.parse(this.responseText);
-                if(response.error != 0)
+                if(response.error != 0) 
                 {
                     $('#registerError').html(response.errorMessage);
                 }
                 if(response.error == 0)
                 {
-                    //SetSessionUtilisateur(); //Récupére la session en cours et change l'affichage
+                    SetSessionUtilisateur(); //Récupére la session en cours et change l'affichage
                     M.Modal.getInstance($('#register')).close();
                 }
             }

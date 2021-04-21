@@ -1,5 +1,5 @@
 <?php
-
+    require_once "./class-include.php";
     function SetSessionUtilisateur() 
     {
 
