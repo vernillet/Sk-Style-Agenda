@@ -31,7 +31,7 @@
             $req = $db->prepare("SELECT nom, prenom, email, telephone, status FROM utilisateurs WHERE email = '".$email."'");
 
             $req->execute();
-            
+               
             $response = $req->fetch();
 
             $user = new Utilisateur($response['nom'], $response['prenom'], $response['email'], $response['telephone'], $response['status']);
