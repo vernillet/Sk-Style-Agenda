@@ -1,4 +1,4 @@
-#Logo {
+#logo {
     width: 90px;
     height: 98.92px;
     margin: 30px;
@@ -6,7 +6,7 @@
     z-index: 1004;
 }
 
-#btn-Menu{
+#btn-menu{
     position: absolute;
     margin: 30px;
     right: 0;

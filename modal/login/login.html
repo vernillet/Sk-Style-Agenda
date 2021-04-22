@@ -1,16 +1,32 @@
+<!-- Modal login -->
 <div id="login" class="modal">
     <div class="modal-content">
-        <form id="loginForm" onsubmit="return false;">
+        <!-- Formulaire de login -->
+        <form id="login-form" onsubmit="return false;">
+            <!-- Email -->
             <label for="email">E-mail</label>
             <input type="text" name="email" id="email" requiered>
+            <!-- Mot de passe -->
             <label for="password">Mot de passe</label>
             <input type="password" name="password" requiered>
+            <!-- /!\ (Non implémenté) Se souvenir  -->
             <label>
-                <input type="checkbox" name="remember" value="1">
+                <input type="checkbox" name="remember" value="1" disabled>
                 <span>Se souvenir de moi.</span>
             </label>
-            <p id="loginError"></p>
-            <input type="submit" class="btn" value="Se connecter">
+            <!-- Zone d'erreur -->
+            <p id="login-error"></p>
+            <!-- Envois formulaire -->
+            <input type="submit" class="btn orange lighten-4 black-text" value="Se connecter">
         </form>
     </div>
 </div>
+
+<!-- Plan du document -->
+<!-- Modal login -->
+    <!-- Formulaire de login -->
+        <!-- Email -->
+        <!-- Mot de passe -->
+        <!-- /!\ (Non implémenté) Se souvenir  -->
+        <!-- Zone d'erreur -->
+        <!-- Envois formulaire -->

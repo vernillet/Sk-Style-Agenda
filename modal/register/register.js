@@ -1,49 +1,72 @@
+// Fonction Initialisation du Modal.
 function initModalRegister() 
 {
-    M.Modal.init($('#register'));//Initialisation du Modal
+    M.Modal.init($('#register'));
 }
 
-$('#registerForm').submit(function () {
-
+// Fonction envois formulaire.
+$('#register-form').submit(function () 
+{
+    // Récuperation des données formulaire.
     var json = 
     {
-        nom:             $('#registerForm input[name="nom"]'            ).val(),
-        prenom:          $('#registerForm input[name="prenom"]'         ).val(),
-        email:           $('#registerForm input[name="email"]'          ).val(),
-        telephone:       $('#registerForm input[name="telephone"]'      ).val(),
-        password:        $('#registerForm input[name="password"]'       ).val(),
-        passwordConfirm: $('#registerForm input[name="passwordConfirm"]').val(),
-        conditions:      $('#registerForm input[name="conditions"]'     ).val()
+        nom:             $('#register-form input[name="nom"]'            ).val(),
+        prenom:          $('#register-form input[name="prenom"]'         ).val(),
+        email:           $('#register-form input[name="email"]'          ).val(),
+        telephone:       $('#register-form input[name="telephone"]'      ).val(),
+        password:        $('#register-form input[name="password"]'       ).val(),
+        passwordConfirm: $('#register-form input[name="passwordConfirm"]').val(),
+        conditions:      $('#register-form input[name="conditions"]'     ).val()
     };
-    
     json = JSON.stringify(json);
-    var xhttp = new XMLHttpRequest();
 
+    // Requette AJAX.
+    var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() 
     {
         if (this.readyState == 4)
-        { //NE PAS OUBLIER LA VERIFICATION 
+        { 
             if (this.status == 200)
             {
-                console.log(this.responseText);
+                // Récuperation des données script.
                 var response = JSON.parse(this.responseText);
-                if(response.error != 0) 
-                {
-                    $('#registerError').html(response.errorMessage);
-                }
+                // Si le register est valide
                 if(response.error == 0)
                 {
-                    SetSessionUtilisateur(); //Récupére la session en cours et change l'affichage
+                    // Creation de session Utilisateur.
+                    SetSessionUtilisateur(); 
                     M.Modal.getInstance($('#register')).close();
                 }
+                else 
+                {
+                    // Affichage de l'erreur.
+                    $('#register-error').html(response.errorMessage);
+                }
+                
             }
         }
     }
 
+    // Envois de la requette.
     xhttp.open("POST","./php/script/register.php");
     xhttp.setRequestHeader("Content-type", "application/json")
     xhttp.send(json);
 
 });
 
+// Appel de la fonction d'initialisation Modal.
 initModalRegister();
+
+// Plan du document.
+
+// Fonction Initialisation du Modal.
+// Fonction envois formulaire.
+    // Récuperation des données formulaire.
+    // Requette AJAX.
+        // Récuperation des données script.
+        // Si le register est valide
+            // Creation de session Utilisateur.
+        // Sinon
+           // Affichage de l'erreur.
+    // Envois de la requette.
+// Appel de la fonction d'initialisation Modal.
