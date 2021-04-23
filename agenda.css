@@ -2,6 +2,18 @@
     height: 50px;
 }
 
+.reservation {
+    height: 60px;
+    width: 12.7vw;
+    background-color: #ffe0b2;
+    color: black;
+}
+
+.slot {
+    position: absolute;
+    text-align: center;
+}
+
 /* CSS GRID AGENDA */
 
 .agenda {

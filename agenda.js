@@ -9,8 +9,7 @@ $('#btn-next-week').click(function() {
         week += 1;
     }
     
-    selectweek(week);
-    getEvent(week);
+    getReservation(week);
 
     $('#btn-previous-week').attr("disabled", false);
     
@@ -36,12 +35,13 @@ function getReservation(selector) {
             {
                 // Récuperation des données script.
                 var response = JSON.parse(this.response);
-                htmlWeekDays(response.weekDays);
+                console.log(response);
+                //htmlWeekDays(response.weekDays);
                 htmlWeekReservation(response.weekReservation);
             }
         }
     };
-    xhttp.open("GET", "./php/script/get-reservation.php?select=" + select, true);
+    xhttp.open("GET", "./php/script/get-reservation.php?select=" + selector, true);
     xhttp.send();
 }
 
@@ -57,13 +57,16 @@ function htmlWeekDays(objDate) {
 }
 
 function htmlWeekReservation(objReservation) {
-    objEvent.forEach(element => {
+
+    var structure = "";
+
+    objReservation.forEach(element => {
 
         dateDebut = new Date(element.dateDebut * 1000);
         
         if(element.type == 'reservation') {
             if(element.reserver) {
-                structure += "<a href='#reservation' data-dateTime='"+element.dateDebut+"'><div class='slot reservation booked' style='grid-row: "+element.row+"; grid-column: "+element.column+"; height: 60px;'>"+dateDebut+"</div></a>";
+                structure += "<div class='slot reservation booked green' style='grid-row: "+element.row+"; grid-column: "+element.column+"; height: 60px;'>"+dateDebut+"</div>";
             }
             else {
                 structure += "<div class='slot reservation' style='grid-row: "+element.row+"; grid-column: "+element.column+"; height: 60px;'>"+dateDebut+"</div>";
@@ -76,4 +79,6 @@ function htmlWeekReservation(objReservation) {
         }
 
     });
+
+    $(".evenement").html(structure);
 }
